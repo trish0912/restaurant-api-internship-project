@@ -1,0 +1,102 @@
+[
+  {
+    "model": "restaurants.restaurant",
+    "pk": 1,
+    "fields": {
+      "name": "Spice Hub",
+      "address": "MG Road, Bangalore",
+      "logo": "restaurants/logos/spicehub.jpg",
+      "owner": 1
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 2,
+    "fields": {
+      "name": "Tasty Bites",
+      "address": "Koramangala, Bangalore",
+      "logo": "restaurants/logos/tastybites.jpg",
+      "owner": 1
+    }
+  },
+  {
+    "model": "restaurants.restaurant",
+    "pk": 3,
+    "fields": {
+      "name": "Green’s Delight",
+      "address": "Whitefield, Bangalore",
+      "logo": "restaurants/logos/greensdelight.jpg",
+      "owner": 1
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 1,
+    "fields": {
+      "name": "Paneer Butter Masala",
+      "restaurant": 1,
+      "price": "180.00",
+      "description": "Rich and creamy curry made with fresh paneer and butter.",
+      "image": "menu/images/paneer.jpg"
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 2,
+    "fields": {
+      "name": "Veg Biryani",
+      "restaurant": 1,
+      "price": "160.00",
+      "description": "Aromatic rice cooked with mixed vegetables and spices.",
+      "image": "menu/images/biryani.jpg"
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 3,
+    "fields": {
+      "name": "Pasta Alfredo",
+      "restaurant": 2,
+      "price": "220.00",
+      "description": "Creamy white sauce pasta with Italian herbs.",
+      "image": "menu/images/pasta.jpg"
+    }
+  },
+  {
+    "model": "orders.customer",
+    "pk": 1,
+    "fields": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "9876543210",
+      "created_at": "2025-10-08T10:00:00Z"
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 1,
+    "fields": {
+      "customer": 1,
+      "status": "CONFIRMED",
+      "created_at": "2025-10-08T10:30:00Z"
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "menu_item": 1,
+      "quantity": 2
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 2,
+    "fields": {
+      "order": 1,
+      "menu_item": 2,
+      "quantity": 1
+    }
+  }
+]

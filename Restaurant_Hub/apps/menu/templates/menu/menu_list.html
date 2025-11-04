@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if restaurant %}
+    <h2>{{ restaurant.name }} — Menu</h2>
+  {% else %}
+    <h2>Menu</h2>
+  {% endif %}
+
+  <form method="get" style="margin-bottom: 1rem;">
+    <input type="text" name="q" value="{{ q }}" placeholder="Search menu...">
+    <button type="submit">Search</button>
+  </form>
+
+  <ul>
+    {% for item in items %}
+      <li>
+        {{ item.name }} — ₹{{ item.price }}
+        {% if item.image %}
+          <br>
+          <img src="{{ item.image.url }}" alt="{{ item.name }}" width="80">
+        {% endif %}
+      </li>
+    {% empty %}
+      <li>No items available.</li>
+    {% endfor %}
+  </ul>
+
+  {% if not restaurant %}
+    <p><a href="/">Back to Restaurants</a></p>
+  {% else %}
+    <p><a href="{% url 'restaurant_detail' restaurant.slug %}">← Back to {{ restaurant.name }}</a></p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto;
+padding: 1rem; }
+header { display:flex; justify-content:space-between; align-items:center; }
+nav a { margin-left: 0.5rem; }
+img { border-radius: 6px; }
+footer { margin-top: 2rem; text-align:center; color:#666; }

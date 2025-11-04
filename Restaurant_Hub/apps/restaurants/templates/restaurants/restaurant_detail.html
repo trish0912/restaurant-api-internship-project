@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>{{ restaurant.name }}</h2>
+  {% if restaurant.logo %}
+    <img src="{{ restaurant.logo.url }}" alt="{{ restaurant.name }} logo" width="150">
+  {% endif %}
+  <p>{{ restaurant.address }}</p>
+  <p>Phone: {{ restaurant.phone }}</p>
+  <p>Opening hours: {{ restaurant.opening_hours }}</p>
+
+  <a href="{% url 'restaurant_menu' restaurant.slug %}">View Menu</a>
+
+  <h3>Menu</h3>
+  <ul>
+    {% for item in restaurant.menu_items.all %}
+      <li>{{ item.name }} — ₹{{ item.price }}</li>
+    {% empty %}
+      <li>No menu items yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
